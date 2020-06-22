@@ -31,5 +31,5 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
 
 quality: clean ## check coding style with pycodestyle and pylint
-	pycodestyle ./push_user_to_hubspot_plugin
-	pylint ./push_user_to_hubspot_plugin --rcfile=./setup.cfg
+	pycodestyle ./edx_hubspot
+	pylint ./edx_hubspot --rcfile=./setup.cfg

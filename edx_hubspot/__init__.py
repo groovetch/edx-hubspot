@@ -1,5 +1,5 @@
 """
-Init module for push_user_to_hubspot_plugin.
+Init module for edx_hubspot.
 """
 
 from __future__ import unicode_literals

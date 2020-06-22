@@ -1,5 +1,5 @@
 """
-Test Django settings for push_user_to_hubspot_plugin project.
+Test Django settings for edx_hubspot project.
 """
 
 from __future__ import unicode_literals

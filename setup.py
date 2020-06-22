@@ -1,5 +1,5 @@
 """
-Setup file for push_user_to_hubspot_plugin Django plugin.
+Setup file for edx_hubspot Django plugin.
 """
 
 from __future__ import print_function
@@ -56,24 +56,24 @@ def get_version(*file_paths):
     raise RuntimeError('Unable to find version string.')
 
 
-VERSION = get_version('push_user_to_hubspot_plugin', '__init__.py')
+VERSION = get_version('edx_hubspot', '__init__.py')
 
 
 setup(
-    name='push_user_to_hubspot_plugin',
+    name='edx-hubspot',
     version=VERSION,
     description='Push User To Hubspot Plugin',
-    author='eduNEXT',
-    author_email='contact@edunext.co',
+    author='',
+    author_email='',
     packages=[
-        'push_user_to_hubspot_plugin',
+        'edx_hubspot',
     ],
     include_package_data=True,
     install_requires=load_requirements('requirements/base.in'),
     zip_safe=False,
     entry_points={
         "lms.djangoapp": [
-            'push_user_to_hubspot_plugin = push_user_to_hubspot_plugin.apps:PushUserToHubspotPluginConfig',
+            'edx_hubspot = edx_hubspot.apps:PushUserToHubspotPluginConfig',
         ],
     },
 )

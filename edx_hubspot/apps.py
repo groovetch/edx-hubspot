@@ -1,5 +1,5 @@
 """
-App configuration for push_user_to_hubspot_plugin.
+App configuration for edx_hubspot.
 """
 
 from __future__ import unicode_literals
@@ -11,7 +11,7 @@ class PushUserToHubspotPluginConfig(AppConfig):
     """
     Push User To Hubspot Plugin configuration.
     """
-    name = 'push_user_to_hubspot_plugin'
+    name = 'edx_hubspot'
     verbose_name = 'Push User To Hubspot Plugin'
 
     plugin_app = {

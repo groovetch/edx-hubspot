@@ -1,5 +1,5 @@
 """
-Common Django settings for push_user_to_hubspot_plugin project.
+Common Django settings for edx_hubspot project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.11/topics/settings/

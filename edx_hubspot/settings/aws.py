@@ -1,5 +1,5 @@
 """
-AWS Django settings for push_user_to_hubspot_plugin project.
+AWS Django settings for edx_hubspot project.
 
 Juniper release will remove aws.py file. https://openedx.atlassian.net/browse/DEPR-14
 """

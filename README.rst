@@ -4,7 +4,7 @@ Push User To Hubspot Plugin
 Features
 --------
 
--  This plugin is to listening in UserProfile model's post\_save signal
+-  This plugin is to listening in UserProfile model's post_save signal
    to push newly registered user to Hubspot contacts.
 
 Installation
