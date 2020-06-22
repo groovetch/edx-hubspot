@@ -17,7 +17,7 @@ Open edX devstack
 -  Add Hubspot API key to lms settings
 
 ::
-
+    FEATURES['ENABLE_LMS_HUBSPOT_INTEGRATION'] = True
     HUBSPOT_API_KEY = '********************************'
 
 -  Open a new LMS shell.
