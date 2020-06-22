@@ -1,35 +1,17 @@
-"""
-Common Django settings for edx_hubspot project.
+import logging
 
-For more information on this file, see
-https://docs.djangoproject.com/en/1.11/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.11/ref/settings/
-"""
-
-from __future__ import unicode_literals
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'secret-key'
-
-
-# Application definition
-
-INSTALLED_APPS = []
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_TZ = True
+log = logging.getLogger(__name__)
 
 
 def plugin_settings(settings):
-    pass
+    settings.ENABLE_LMS_HUBSPOT_INTEGRATION = settings.FEATURES.get("ENABLE_LMS_HUBSPOT_INTEGRATION", False)
+
+    if settings.ENABLE_LMS_HUBSPOT_INTEGRATION:
+        log.info("Enabled LMS Hubspot Integration")
+
+        try:
+            settings.HUBSPOT_API_KEY = settings.HUBSPOT_API_KEY
+        except Exception as e:
+            raise Exception("HUBSPOT_API_KEY key required as ENABLE_LMS_HUBSPOT_INTEGRATION is enabled")
+    else:
+        log.info("Disabled LMS Hubspot Integration")

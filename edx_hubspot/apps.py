@@ -21,7 +21,7 @@ class PushUserToHubspotPluginConfig(AppConfig):
                 'test': {'relative_path': 'settings.test'},
                 'aws': {'relative_path': 'settings.aws'},
                 'production': {'relative_path': 'settings.production'},
-                'devstack': {'relative_path': 'settings.docker_devstack'},
+                'devstack': {'relative_path': 'settings.devstack_docker'},
             }
         }
     }
