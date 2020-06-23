@@ -13,19 +13,24 @@ Installation
 Open edX devstack
 ~~~~~~~~~~~~~~~~~
 
--  Clone this repo in the src folder of your devstack.
--  Add Hubspot API key to lms settings
+-  Install this repository: pip install -e git+https://github.com/groovetch/edx-hubspot.git#egg=edx_hubspot
+-  Add LMS settings
 
-::
-    FEATURES['ENABLE_LMS_HUBSPOT_INTEGRATION'] = True
-    HUBSPOT_API_KEY = '********************************'
-    HUBSPOT_CONTACT_FIELDS = ["email", "first_name", "last_name"] // list of user fields to push to Hubspot
-    HUBSPOT_CONTACT_MAPPING_FIELDS = {"email": "email", "first_name": "firstname", "last_name": "lastname"} // fields mapping due to the different of naming conventions between django and Hubspot
+.. code:: bash
 
--  Open a new LMS shell.
--  Install the plugin as follows: pip install -e
-   git+https://github.com/groovetch/edx-hubspot.git#egg=edx-hubspot
--  Restart Lms services.
+    // enable EDX Hubspot Integration
+    ENABLE_LMS_HUBSPOT_INTEGRATION = True
+
+    // Hubspot API key
+    HUBSPOT_API_KEY = "******************"
+
+    // list of user fields to push to Hubspot contacts
+    HUBSPOT_CONTACT_FIELDS = ["email", "first_name", "last_name"]
+
+    // field mapping settings due to the differences of field naming convention between Django and Hubspot
+    HUBSPOT_CONTACT_MAPPING_FIELDS = {"email": "email", "first_name": "firstname", "last_name": "lastname"}
+
+- Restart LMS server
 
 Usage
 -----
