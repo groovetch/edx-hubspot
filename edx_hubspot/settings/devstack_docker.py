@@ -11,7 +11,10 @@ def plugin_settings(settings):
 
         try:
             settings.HUBSPOT_API_KEY = settings.HUBSPOT_API_KEY
+            settings.HUBSPOT_CONTACT_FIELDS = settings.HUBSPOT_CONTACT_FIELDS
+            settings.HUBSPOT_CONTACT_MAPPING_FIELDS = settings.HUBSPOT_CONTACT_MAPPING_FIELDS
         except Exception as e:
-            raise Exception("HUBSPOT_API_KEY key required as ENABLE_LMS_HUBSPOT_INTEGRATION is enabled")
+            raise Exception(
+                "HUBSPOT_API_KEY, HUBSPOT_CONTACT_FIELDS, HUBSPOT_CONTACT_MAPPING_FIELDS keys are required as ENABLE_LMS_HUBSPOT_INTEGRATION is enabled")
     else:
         log.info("Disabled LMS Hubspot Integration")
