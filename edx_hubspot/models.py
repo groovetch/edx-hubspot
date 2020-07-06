@@ -12,7 +12,12 @@ log = logging.getLogger(__name__)
 
 @receiver(post_save, sender=UserProfile)
 def push_user_to_hubspot(sender, **kwargs):
-    if settings.ENABLE_HUBSPOT_INTEGRATION and settings.ENABLE_HUBSPOT_SEND_CONTACTS:
+    enable_hubspot_integration = hasattr(settings,
+                                         'ENABLE_HUBSPOT_INTEGRATION') and settings.ENABLE_HUBSPOT_INTEGRATION
+    enable_hubspot_send_contacts = hasattr(settings,
+                                           'ENABLE_HUBSPOT_SEND_CONTACTS') and settings.ENABLE_HUBSPOT_SEND_CONTACTS
+
+    if enable_hubspot_integration and enable_hubspot_send_contacts:
         try:
             if kwargs['created']:
                 user_profile = kwargs['instance']
